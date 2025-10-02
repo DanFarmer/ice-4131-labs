@@ -286,7 +286,7 @@ A very common strategy to parallelise code is to identify for/while loops and re
 There are 5 main steps to convert serial code to parallel code with Pthreads:
 
 1. All C/C++ programs using Pthreads need to include the `pthread.h` header file.
-2. `#include <pthread.h>` at the top of your file.
+   - `#include <pthread.h>` at the top of your file.
 3. Create an entry point for the thread
    - When creating a thread using Pthreads, you need to point it to a function for it to start execution.
    - It is the thread's callback function.
