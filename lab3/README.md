@@ -286,6 +286,7 @@ cat timing.csv timing-serial-intel-*.csv timing-serial-gnu-*.csv > runtime.csv
 > **PRO TIP:** The `cat` commands reads each of the files it is passed as arguments and prints them to the command line. By using the output redirection operator (`>`) we can instead output the result to a new file (in this case `runtime.csv`), saving it for later, or for more comfortable reading.
 
 1. Download `runtime.csv` using your preferred SFTP client, e.g. WinSCP on the lab machines.
+   		scp -J [USERNAME]@ssh.bangor.ac.uk b.[USERNAME]@hawklogin.cf.ac.uk:/home/b.[USERNAME]/ice-4131-labs/SimpleRayTracing/runtime.csv M:
 2. Open the file using MS Excel or equivalent.
 
 Now some questions for you to think about:
