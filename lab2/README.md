@@ -149,8 +149,13 @@ The file should contain the following:
 #!/bin/bash
 #
 #SBATCH --job-name=my_test           # Job name
-#SBATCH --account=scw2139            # SCW project code
+#SBATCH --output=test.txt
+#SBATCH -A SCWF00238_p_butcher_233    # SCW project code
+#SBATCH --partition=htc_genoa
 #SBATCH --ntasks=1                   # Run a single task
+#SBATCH --ntasks-per-node=1
+#SBATCH --cpus-per-task=1
+#SBATCH --nodes=1
 #SBATCH --mem=600mb                  # Total memory limit
 #SBATCH --time=00:15:00              # Time limit hrs:min:sec
 
@@ -169,13 +174,13 @@ echo EXIT
 This short program sets up a batch job on the supercomputer, prints the hostname and the contents of your home directory to the terminal window, then sleeps for 15s before exiting.
 
 > **PRO TIP:**  
-> If you don't want to remember the project code `scw2139` each time, modify the file `.bashrc` in your home directory:
+> If you don't want to remember the project code `SCWF00238_p_butcher_233` each time, modify the file `.bashrc` in your home directory:
 >
 > - Run `chmod +w .bashrc` in your home directory to add the write permission to the file
 > - Add the following line to .bashrc:
 >
 > ```bash
-> export PROJECT=scw2139
+> export PROJECT=SCWF00238_p_butcher_233
 > ```
 >
 > After saving, run the `bash` command. Now the environment variable `$PROJECT` is available every time you need to refer to the SCW project code. If you follow this step, you can replace line 4 of `submit.sh` with:
@@ -195,13 +200,13 @@ This is because we are only using 1 thread in this case.
 To launch your first job, you need to use `sbatch` as follows:
 
 ```bash
-sbatch --account=scw2139 submit.sh
+sbatch -c 25 submit1.sh
 ```
 
 If you followed the **PRO TIP** above, this would be:
 
 ```bash
-sbatch --account=$PROJECT submit.sh
+sbatch -c 25 submit1.sh
 ```
 
 In the console, you will see the job number, e.g.:
@@ -258,11 +263,16 @@ g++ helloworld-pthread4.cxx -lpthread -o helloworld-pthread4
 - Create a new file named `submit.sh` containing:
 
 ```bash
-#!/bin/bash
+#!/bin/bash --login
 #
 #SBATCH --job-name=my_test           # Job name
-#SBATCH --account=scw2139            # SCW project code
-#SBATCH --nodes=1                    # Use one node
+#SBATCH --output=test.txt
+#SBATCH -A SCWF00238_p_butcher_233    # SCW project code
+#SBATCH --partition=htc_genoa
+#SBATCH --ntasks=1                   # Run a single task
+#SBATCH --ntasks-per-node=1
+#SBATCH --cpus-per-task=1
+#SBATCH --nodes=1
 #SBATCH --mem=600mb                  # Total memory limit
 #SBATCH --time=00:15:00              # Time limit hrs:min:sec
 
@@ -272,7 +282,7 @@ g++ helloworld-pthread4.cxx -lpthread -o helloworld-pthread4
 - To launch the job, use the following code, replacing **`N`** with a number between 1 and 40:
 
 ```bash
-sbatch --account=scw2139 -c N submit.sh
+sbatch -c N submit.sh
 ```
 
 We use an environment variable, `SLURM_CPUS_PER_TASK`. It corresponds to the number of threads that you want to use. We requested one computing node with `#SBATCH --nodes=1`, and the maximum number of CPU cores is 40. Now, test your code with various numbers of threads (update `N`) and check the contents in the output files. Note that you do not need to create a new submit.sh for each test, you can re-use it in this case!
