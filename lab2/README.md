@@ -200,13 +200,7 @@ This is because we are only using 1 thread in this case.
 To launch your first job, you need to use `sbatch` as follows:
 
 ```bash
-sbatch --account=SCWF00238_p_butcher_233 submit.sh
-```
-
-If you followed the **PRO TIP** above, this would be:
-
-```bash
-sbatch --account=$PROJECT submit.sh
+sbatch submit.sh
 ```
 
 In the console, you will see the job number, e.g.:
