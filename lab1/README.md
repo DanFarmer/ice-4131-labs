@@ -41,7 +41,7 @@ It will take some time for your account to be activated, so please be patient on
 
 In the meantime, while waiting to be granted access to Supercomputing Wales, you should explore the following:
 
-- [About Falcon - Technical specification of the supercomputer](https://portal.supercomputing.wales/index.php/about-hawk/](https://bangoroffice365.sharepoint.com/sites/DigitalServices/SitePages/The-Falcon-Supercomputer.aspx )
+- [About Falcon - Technical specification of the supercomputer](https://bangoroffice365.sharepoint.com/sites/DigitalServices/SitePages/The-Falcon-Supercomputer.aspx)
 - [SCW Portal - Familiarise yourselves with the help topics available](https://portal.supercomputing.wales/)
 - [eResearch Linux Compute Cluster - Bangor University's own research computing cluster](https://bangoroffice365.sharepoint.com/sites/DigitalServices/SitePages/eResearch-Linux-Compute-Cluster.aspx)
 
