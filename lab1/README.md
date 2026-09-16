@@ -54,7 +54,7 @@ If you are still waiting, log into Bangor's eResearch cluster using the instruct
 Once you have been notified that your account has been opened, follow the instructions on the “Connecting to Falcon” page:
 [[https://bangoroffice365.sharepoint.com/sites/DigitalServices/SitePages/The-Falcon-Supercomputer---Connecting.aspx](https://bangoroffice365.sharepoint.com/sites/DigitalServices/SitePages/The-Falcon-Supercomputer---Connecting.aspx)]
 
-Remember that when accessing Hawk, your username must be prefixed by `b.` for example:
+Remember that when accessing Falcon, your username must be prefixed by `b.` for example:
 
 ```bash
 b.abc24def
@@ -63,7 +63,7 @@ b.abc24def
 An example login would therefore be:
 
 ```bash
-b.abc24def@hawklogin.cf.ac.uk
+b.abc24def@falconlogin.cf.ac.uk
 ```
 
 Please note: If you have 2 failed login attempts and fail to login after the third attempt, the IP address of the machine you are using will be banned from accessing the supercomputer for 24 hours. As such, if you cannot remember your password after 2 attempts, reset it at [https://my.supercomputing.wales](https://my.supercomputing.wales).
@@ -81,10 +81,10 @@ Once logged in, you will have access to:
 
 The cores we will be using are:
 
-CPU: AMD EPYC 9654 “Genoa” @ 2.4 GHz
-Cores per node: 192
-Memory: 768 GB per node (4 GB per core)
-Local Storage: OS SSD Micron 5400 MAX 480GB, SATA, 2.5", 3D TLC, 5DWPD,7mm
+- CPU: AMD EPYC 9654 “Genoa” @ 2.4 GHz
+- Cores per node: 192
+- Memory: 768 GB per node (4 GB per core)
+- Local Storage: OS SSD Micron 5400 MAX 480GB, SATA, 2.5", 3D TLC, 5DWPD,7mm
 
 ### For reference Hawk (the previous super computer) had:
 
