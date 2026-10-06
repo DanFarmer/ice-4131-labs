@@ -145,6 +145,12 @@ You should see all the current jobs. In most cases, you are only interested in y
 squeue -u $USER
 ```
 
+If you are waiting on a specific task to finish before you move on it can be helpful to `watch` squeue:
+
+```bash
+watch squeue -u $USER
+```
+
 Expected output, once you have submitted jobs, is similar to:
 
 ```bash
